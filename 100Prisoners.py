@@ -7,6 +7,7 @@ def play_random(n=100):
     random.shuffle(boxes)
     return all(p in [boxes[i] for i in random.sample(range(n), n//2)] for p in range(n))
 
+## 감사합니다. 
 def play_optimal(n=100):
     """순환 전략: 자기 번호부터 시작해서 상자 안의 번호를 따라감"""
     boxes = list(range(n))
@@ -15,7 +16,7 @@ def play_optimal(n=100):
         box = prisoner
         for _ in range(n // 2):
             if boxes[box] == prisoner:
-                break
+                break # 박스에 죄수가 있다면 for 문 종료
             box = boxes[box]
         else:
             return False
